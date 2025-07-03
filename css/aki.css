@@ -1,0 +1,34 @@
+body{
+    font-family:'Georgia','Times New Roman',serif;
+    background-color:#f5e8dc;
+    color:#5c4326;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    font-size:25px;
+}
+
+.subheading{
+    text-align:center;
+}
+
+h3{
+    text-align:center;
+}
+
+h1{
+    text-align:center;
+}
+
+.img-center{
+    display:flex;
+    justify-content:center;
+}
+
+.img-center img{
+    max-width:500px;
+    height:auto;
+    display:block;
+}
