@@ -1,11 +1,7 @@
-img{
-    max-width: 500px;
-    text-align:center;
-    margin:50px 0 0 370px;
-}
-
 body{
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family:'Georgia','Times New Roman',serif;
+    background-color:#f5e8dc;
+    color:#5c4326;
 }
 
 .container{
@@ -24,4 +20,15 @@ h3{
 
 h1{
     text-align:center;
+}
+
+.img-center{
+    display:flex;
+    justify-content:center;
+}
+
+.img-center img{
+    max-width:500px;
+    height:auto;
+    display:block;
 }
