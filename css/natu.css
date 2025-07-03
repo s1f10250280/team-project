@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #3498db;
+    --accent-color: #f1c40f;       
+}
+
+h1 {
+    color: var(--accent-color);
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.link a {
+    display: inline-block; /* transformを適用するために必要 */
+    transition: transform 0.2s ease; /* 0.2秒かけてスムーズに変化させる */
+}
+
+/* aタグにマウスが乗った（:hover）時のスタイル */
+.link a:hover {
+    transform: scale(1.2); /* 1.2倍に拡大 */
+}
+
