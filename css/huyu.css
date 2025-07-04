@@ -2,6 +2,7 @@ h1 {
   font-family: sans-serif;
   font-size: 24px;
   text-align: center;
+  color:rgb(79, 79, 245)
 }
 .a {
   text-align: center;
@@ -16,4 +17,7 @@ h1 {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 70px;
+}
+body{
+  background-color: rgb(219, 242, 243);
 }

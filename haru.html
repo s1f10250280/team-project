@@ -14,6 +14,7 @@
         <a href="natu.html">夏</a>
         <a href="aki.html">秋</a>
         <a href="huyu.html">冬</a>
+        <a href="matome.html">まとめ</a></div>
         </div>
         <hr>
         <div class="b">
@@ -34,5 +35,60 @@
         <img src=".\img\harug.png"width="500" alt="女春コーデ写真">
         </div>
         </div>
+        <canvas id="snowCanvas"></canvas>
+        <script>
+            (function(){
+                var canvas = document.getElementById('snowCanvas'),
+                ctx    = canvas.getContext('2d'),
+                petals = [],
+                petalImg = new Image(),
+                PetalCount = 50;  
+                petalImg.src = './img/hana.png';
+                petalImg.onload = initAndDraw;
+                function resize(){
+                    canvas.width  = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+                window.addEventListener('resize', resize);
+                function initAndDraw(){
+                    resize();
+                    for(var i = 0; i < PetalCount; i++){
+                        petals.push({
+                            x:     Math.random() * canvas.width,
+                            y:     Math.random() * canvas.height,
+                            size:  10 + Math.random() * 20,      
+                            speed: 1  + Math.random() * 2,       
+                            swing: Math.random() * 2 - 1,        
+                            angle: Math.random() * Math.PI * 2,  
+                            rot:   (Math.random() - 0.5) * 0.02,  
+                            alpha: 0.2 + Math.random() * 0.3     
+                        });
+                    }
+                    requestAnimationFrame(draw);
+                }
+                function draw(){
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for(var i = 0; i < petals.length; i++){
+                        var p = petals[i];
+                        ctx.save();
+                        ctx.globalAlpha = p.alpha;
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.angle);
+                        ctx.drawImage(petalImg, -p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                        p.y     += p.speed;
+                        p.x     += p.swing;
+                        p.angle += p.rot;
+                        if(p.y > canvas.height + p.size || p.x < -p.size || p.x > canvas.width + p.size){
+                            p.x     = Math.random() * canvas.width;
+                            p.y     = -p.size;
+                            p.speed = 1  + Math.random() * 2;
+                        }
+                    }
+                    requestAnimationFrame(draw);
+                }
+            })();
+        </script>
     </body>
 </html>
+
