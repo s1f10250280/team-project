@@ -4,7 +4,7 @@ body{
     color:#5c4326;
 }
 
-.container{
+#container{
     display: flex;
     justify-content: center;
     font-size:25px;
@@ -25,6 +25,7 @@ h1{
 .img-center{
     display:flex;
     justify-content:center;
+    margin: 0px;
 }
 
 .img-center img{
